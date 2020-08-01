@@ -11,3 +11,13 @@ class LocationTestCase(TestCase):
     #test instance
     def test_instance(self):
         self.assertTrue(isinstance(self.ruiru,location))
+
+class CategoryTestCase(TestCase):
+
+    #set up method
+    def setUp(self):
+        self.test = category(cat = '#test')
+    
+    #test instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.test,category))
