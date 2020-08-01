@@ -19,4 +19,5 @@ class Post(models.Model):
     caption =models.TextField()
     location = models.ManyToManyField(location)
     category = models.ManyToManyField(category)
-
+    post_date = models.DateTimeField(auto_now_add=True)
+    
