@@ -1,11 +1,6 @@
 from django.db import models
 
 # Create your models here.
-class Post(models.Model):
-    image_url = models.ImageField(upload_to = 'posts/')
-    title = models.CharField(max_length= 60)
-    caption =models.TextField()
-
 class location(models.Model):
     name = models.CharField(max_length= 40)
 
@@ -17,3 +12,11 @@ class category(models.Model):
 
     def __str__(self):
         return self.cat
+
+class Post(models.Model):
+    image_url = models.ImageField(upload_to = 'posts/')
+    title = models.CharField(max_length= 60)
+    caption =models.TextField()
+    location = models.ManyToManyField(location)
+    category = models.ManyToManyField(category)
+
