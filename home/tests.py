@@ -1,5 +1,5 @@
 from django.test import TestCase
-from models import location,category,Post
+from models import Location,category,Post
 from datetime import dt
 # Create your tests here.
 
@@ -33,5 +33,5 @@ class PostTestCase(TestCase):
         self.test = category(cat = "Test")
         self.test.save_category()
 
-        self.new_post = Post(location = self.ruiru, category= self.test, title='This is a test', caption= 'It will be cool', post_date='01:45:23:30')
+        self.new_post = Post(location = self.ruiru, category= self.test, title='This is a test', caption= 'It will be cool')
         
