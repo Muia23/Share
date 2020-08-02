@@ -15,18 +15,26 @@
                 </div>
                 <div class="row">
                     <!-- A search form -->
-                    <form class="navbar-form" role="search" action= "{% url 'search_results' %}">
+                    <form class="navbar-form" role="search" action="% url 'search_results' %}">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search Category" name="post">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                             </div>                            
                         </div>
-                    </form>
+                    </form>                
+                </div>
+                <div class="row">
+                    {% if posts %}
+                        <h2>Found {{ posts|length }} of {{message}} search</h2>                    
+                    {% else %}
+                        <h2> Found 0 posts of {{message}} search</h2>
+                    {% endif %}
                 </div>
             </div>
             <div class="col-md-9" style="width: 100%;">            
-                    <ul class="container">                    
+                <ul class="container">                    
+                    {% if posts %}
                         {% for post in posts %}
                         <li style=" display: inline-block; padding: 10px 5px;"> 
                             <div class="card" style="height: 300px; width: 480px; background-color: aqua;">
@@ -38,15 +46,10 @@
                             </div>
                         </li>
                         {% endfor %}
-                        
-                    </ul>
-
-                
-                
+                    {% endif %}                    
+                </ul>
             </div>
         </div>
-        
-
         {% block scripts %}
             <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

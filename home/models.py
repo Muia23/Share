@@ -16,9 +16,6 @@ class category(models.Model):
     def __str__(self):
         return self.cat
 
-    def save_category(self):
-        self.save()
-
 class Post(models.Model):
     image_url = models.ImageField(upload_to = 'posts/')
     title = models.CharField(max_length= 60)
