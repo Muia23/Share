@@ -27,3 +27,7 @@ class Post(models.Model):
     category = models.ManyToManyField(category)
     post_date = models.DateTimeField(auto_now_add=True)
 
+    @classmethod
+    def get_posts(cls):
+        posts = cls.objects.order_by('-title')
+        return posts
