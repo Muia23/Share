@@ -31,3 +31,8 @@ class Post(models.Model):
     def get_posts(cls):
         posts = cls.objects.order_by('-title')
         return posts
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        post = cls.objects.filter(category__icontains=search_term)
+        return post
