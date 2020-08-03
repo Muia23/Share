@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title></title>
+    </head>
+    <body>
+        <div class="row" style="height:98vh;">
+            <div class="col-md-3" style="background-color: aqua; width: 100%;">
+                <div class="row">
+                    <div class="container">
+                        <h1 style="text-align: center;"> Sharer</h1>
+                    </div>                
+                </div>
+                <div class="row" style="padding: 30px;">
+                    <!-- A search form -->
+                    <form class="navbar-form" role="search" action= "{% url 'search_results' %}"s style="background-color: white;">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search Category eg. #category" name="post">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">search</button>
+                            </div>                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-9">
+                {% for post in posts %}
+                    
+                {% endfor %}
+            </div>
+        </div>
+        <script>
+        function clipFunction() {
+            var copyText = document.getElementById("imageUrl");
+            copyText.select();
+            copyText.setSelectionRange(0,99999)
+            document.execCommand("copy");
+            alert("Url copied to clipboard");
+        }
+        </script>
+    </body>
+</html>
