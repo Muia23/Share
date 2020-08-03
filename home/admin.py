@@ -1,12 +1,10 @@
 from django.contrib import admin
-from .models import Location,Post,tags
+from .models import Location,Post,Category
 
-class PostAdmin(admin.ModelAdmin):
-    filter_horizontal =('tags',)
 # Register your models here.
-admin.site.register(Post,PostAdmin)
+admin.site.register(Post)
 admin.site.register(Location)
-admin.site.register(tags)
+admin.site.register(Category)
 
 
 

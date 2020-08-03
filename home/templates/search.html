@@ -23,26 +23,27 @@
                             </div>                            
                         </div>
                     </form>                
-                </div>
-                <div class="row">
-                    {% if posts %}
-                        <h2>Found {{ posts|length }} of {{message}} search</h2>                    
-                    {% else %}
-                        <h2> Found 0 posts of {{message}} search</h2>
-                    {% endif %}
-                </div>
+                </div>                
             </div>
             <div class="col-md-9" style="width: 100%;">            
+                <div class="container" style="padding: 10px; text-align: center;">
+                    {% if posts %}
+                        <p>Found {{ posts|length }} of search {{message}}</p> 
+                        <hr>               
+                    {% else %}
+                        <p> Found 0 posts of search {{message}}</p>
+                        <hr>
+                    {% endif %}
+                </div>
                 <ul class="container">                    
                     {% if posts %}
                         {% for post in posts %}
                         <li style=" display: inline-block; padding: 10px 5px;"> 
-                            <div class="card" style="height: 300px; width: 480px; background-color: aqua;">
-                                <div class="card-body">
-                                    <h3 style="display: inline-block;">{{post.title}}</h3>
-                                    <p style="display: inline-block; padding-left: 30%;">{{tags.name}}</p>
-                                </div>
-                                <img src="{{post.image_url.url}}" class="card-img-bottom" alt="" style="width: 480px; height:235px;">
+                            <div class="card" style="height: 500px; width: 370px; background-color: aqua;">                                                                                                        
+                                <img src="{{post.image_url.url}}" class="card-img-bottom" alt="" style="width: 370px; height:500px;">
+                                <h5 style="display: inline-block; position: absolute; top: 10px; left:15px;">{{post.title}}</h5>
+                                <p style="display: inline-block; position: absolute; top: 30px; left:15px;">{{post.location}}</p>
+                                <p style="display: inline-block; position: absolute; bottom: 5px; right: 10px;">{{tags.name}}</p>                                
                             </div>
                         </li>
                         {% endfor %}

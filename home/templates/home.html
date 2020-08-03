@@ -17,7 +17,7 @@
                     <!-- A search form -->
                     <form class="navbar-form" role="search" action= "{% url 'search_results' %}"s style="background-color: white;">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search Category" name="post">
+                            <input type="text" class="form-control" placeholder="Search Category eg. #category" name="post">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit">search</button>
                             </div>                            
@@ -34,7 +34,7 @@
                                 <img src="{{post.image_url.url}}" class="card-img-bottom" alt="" style="width: 350px; height:500px;">
                                 <h5 style="display: inline-block; position: absolute; top: 10px; left:15px;">{{post.title}}</h5>
                                 <p style="display: inline-block; position: absolute; top: 30px; left:15px;">{{post.location}}</p>
-                                <p style="display: inline-block; position: absolute; bottom: 5px; right: 10px;">{{post.tags}}</p>                                
+                                <p style="display: inline-block; position: absolute; bottom: 5px; right: 10px;">{{post.category}}</p>                                
                             </div>
                         </li>
                         {% endfor %}
