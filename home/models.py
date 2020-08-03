@@ -37,6 +37,11 @@ class Post(models.Model):
         posts = cls.objects.order_by('-title')
         return posts
 
+    @classmethod 
+    def get_single_post(cls,id):
+        posts = cls.objects.filter(id = id)
+        return posts
+
     @classmethod
     def search_by_category(cls,search_term):
         post = cls.objects.filter(category__name=search_term)

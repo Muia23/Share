@@ -7,6 +7,11 @@ def home(request):
     posts = Post.get_posts()
     return render(request,'home.html', {"posts": posts})
 
+def open_details(request,id):    
+    posts = Post.get_single_post(id)
+    return render(request,'detail.html', {"posts": posts})
+
+
 def search_results(request):
 
     if 'post' in request.GET and request.GET["post"]:

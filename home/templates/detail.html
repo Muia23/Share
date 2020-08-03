@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title></title>
+    </head>
+    <body>
+        <div class="row" style="height:98vh;">
+            <div class="col-md-3" style="background-color: aqua; width: 100%;">
+                <div class="row">
+                    <div class="container">
+                        <h1 style="text-align: center;"> Sharer</h1>
+                    </div>                
+                </div>
+                <div class="row" style="padding: 30px;">
+                    <!-- A search form -->
+                    <form class="navbar-form" role="search" action= "{% url 'search_results' %}"s style="background-color: white;">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search Category eg. #category" name="post">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">search</button>
+                            </div>                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-9">
+                {% for post in posts %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container" style="padding: 45px;">
+                                <img src="{{post.image_url.url}}" alt="" style="width: 550px; height:680px;">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="container" style="padding-top:45%">
+                                <h2 style="display:inline-block; padding-right: 10px;">{{post.title}}</h2>
+                                <p style="display:inline-block;">{{post.category}}</h5>
+                                <h5>{{post.location}}</h3>
+                                <br><br>
+                                <p style="text-align: center;">{{post.caption}}</p>
+                                <br><br>
+                                <p>image link:</p>                                
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="imageUrl" value="http://127.0.0.1:8000/media/{{post.image_url}}" aria-describedby="basic-addon1" readonly>
+                                    <div class="input-group-prepend">
+                                        <button class="input-group-text" id="basic-addon1">Copy</button>
+                                    </div>
+                                </div>                                                                  
+                                <p>To open the image click <a href = "http://127.0.0.1:8000/media/{{post.image_url}}">here</a></p>
+                            </div>                                
+                        </div>
+                    </div>                                
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
