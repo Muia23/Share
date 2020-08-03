@@ -7,9 +7,9 @@ def home(request):
     posts = Post.get_posts()
     return render(request,'home.html', {"posts": posts})
 
-def open_details(request,id):    
-    posts = Post.get_single_post(id)
-    return render(request,'detail.html', {"posts": posts})
+def open_location(request,str):    
+    posts = Post.get_location_post(str)
+    return render(request,'location.html', {"posts": posts})
 
 
 def search_results(request):

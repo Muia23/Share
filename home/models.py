@@ -38,8 +38,8 @@ class Post(models.Model):
         return posts
 
     @classmethod 
-    def get_single_post(cls,id):
-        posts = cls.objects.filter(id = id)
+    def get_location_post(cls,str):
+        posts = cls.objects.filter(location__icontains = str)
         return posts
 
     @classmethod
