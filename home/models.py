@@ -29,6 +29,7 @@ class Post(models.Model):
     caption= models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    name = models.CharField(max_length= 60)
     post_date = models.DateTimeField(auto_now_add=True)
     image_url = models.ImageField(upload_to = 'posts/')
 
