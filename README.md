@@ -3,7 +3,7 @@
  [muia23](https://github.com/Muia23)
 
 ## Project description
-This Django application is a gallery of great pictures taken in our great country Kenya. Capturing the mood, the tradition not leaving out the trendy and urban lifestyle. Enjoy, and if you get a photo you like, be sure to share with your friends. Migical Kenya !
+This Django application is a gallery of great pictures taken in our great country Kenya. Capturing the mood, the tradition not leaving out the trendy and urban lifestyle. Enjoy, and if you get a photo you like, be sure to share with your friends. Magical Kenya !
 
 ## Project setup instruction
 To get the entire program: 
