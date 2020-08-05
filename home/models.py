@@ -35,12 +35,12 @@ class Post(models.Model):
 
     @classmethod
     def get_posts(cls):
-        posts = cls.objects.order_by('-title')
+        posts = cls.objects.order_by('-post_date')
         return posts
 
     @classmethod 
-    def get_location_post(cls,str):
-        posts = cls.objects.filter(location__icontains = str)
+    def get_location_post(cls,id):
+        posts = cls.objects.filter(location__id = id)
         return posts
 
     @classmethod

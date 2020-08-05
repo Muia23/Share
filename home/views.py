@@ -7,8 +7,8 @@ def home(request):
     posts = Post.get_posts()
     return render(request,'home.html', {"posts": posts})
 
-def open_location(request,str):    
-    posts = Post.get_location_post(str)
+def open_location(request,id):    
+    posts = Post.get_location_post(id)
     return render(request,'location.html', {"posts": posts})
 
 
