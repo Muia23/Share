@@ -40,15 +40,24 @@
                                             </div>                                                                  
                                             <p>To open the image click <a href = "http://127.0.0.1:8000/media/{{post.image_url}}">here</a></p>
                                             
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                                            
                                         </div>
                                     </div>  
                                 </div>                                    
                             </div>
                         </div>
                     </div>                    
-                </li>
+                </li>   
+                <script>
+                    function clipFunction() {
+                        var copyText = document.getElementById("imageUrl");
+                        copyText.select();
+                        copyText.setSelectionRange(0,99999)
+                        document.execCommand("copy");
+                        alert("Url copied to clipboard");
+                    }
+                </script>             
             {% endfor %}
-        </ul>
+        </ul>        
     </div>
 {% endblock %}   
