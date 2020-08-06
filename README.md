@@ -13,7 +13,8 @@ To get the entire program:
 3. Run | python3 manage.py runserver |
 4. Open http://127.0.0.1:8000/  on your browser
 
-
+## Deployed link to Heroku
+    https://muia1.herokuapp.com/
 
 ## License info
 MIT License
